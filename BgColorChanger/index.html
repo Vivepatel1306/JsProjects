@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            display: flex;
+            gap: 10px;
+        }
+
+        .Red,
+        .Blue,
+        .Green,
+        .Yellow {
+            height: 30px;
+            width: 50px;
+            
+        }
+
+        .Red {
+            background-color: rgb(209, 106, 106);
+        }
+        .Red:hover{
+            cursor: pointer;
+        }
+
+        .Green {
+            background-color: rgb(32, 174, 75);
+        }
+
+        .Blue {
+            background-color: rgb(104, 171, 235);
+        }
+
+        .Yellow {
+            background-color: rgb(157, 179, 48);
+        }
+    </style>
+</head>
+
+<body><span>
+        <div onclick="red()" class="Red">Red</div>
+        <div onclick="blue()" class="Blue">Blue</div>
+        <div onclick="green()" class="Green">Greem</div>
+        <div onclick="yellow()" class="Yellow">Yellow</div>
+    </span>
+    <h1>How this color is looking</h1>
+    <script src="concept.js"></script>
+</body>
+
+</html>

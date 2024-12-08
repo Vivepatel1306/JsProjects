@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            background-color: rgb(173, 218, 218);
+        }
+
+        button {
+            height: 30px;
+            width: 30px;
+            align-self: center;
+            border-radius: 20px;
+            background-color: rgb(179, 193, 206);
+        }
+        .next{
+            margin-left: 10px;
+        }
+        .back{
+            margin-right: 10px;
+        }
+
+        .container {
+            display: flex;
+            /* flex-direction: column; */
+            align-items: center;
+            padding: 10px 10px 10px 35px;
+            gap: 40px;
+            border: 2px solid red;
+            width: 599px;
+            border-radius: 20px;
+            height: 280px;
+            overflow: hidden;
+            background-color: #20B2AA;
+
+
+
+        }
+
+        .first {
+            display: flex;
+            gap: 10px;
+        }
+img{
+    border-radius: 10px;
+}
+img:hover{
+    transform: scale(1.04);
+}
+        .second {
+            display: flex;
+            gap: 10px;
+            transition: all 1.5s cubic-bezier(0.42, 0, 0.08, 0.72);
+            /* transform:translatex(-83.5vh); */
+        }
+    </style>
+</head>
+
+<body>
+    <button class="back"><</button>
+            <div class="container">
+                <span class="first">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvCArKT9KS9usC7AvQsOJfPrMQOPRpHHvomXE5JIA6sejLYX1RIACmknYOzEbYh5ZQnzU&usqp=CAU"
+                        alt="">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEB51zsVPjXsPR851ralwBWLJoyJ6iMLZtn4P-_Lbk0Pkmr6t28lNyGPSsEuSFE7c8blo&usqp=CAU"
+                        alt="">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF3JOSCXaeWzqiuaWjWDudmqA0Q1WtbfJ25--bbPNRfL3gqFlkNOS89Xv0jlU8pQkuBoM&usqp=CAU"
+                        alt="">
+                </span>
+                <span class="second">
+                    <img height="275px" width="183px"
+                        src="https://i.pinimg.com/236x/4f/3e/2c/4f3e2c2deec5a011088a8c473a4edbdc.jpg" alt="">
+                    <img height="275px" height="327px" width="183px"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9ukCD58Yk79RXBoSN-IPH00ze1maWAXjB7G4xrX0R2lLIV0xsehdx070eQfDXkQfkU58&usqp=CAU"
+                        alt="">
+                    <img height="275px" width="183px"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFjBlKpCGhA2JvxCkHu6JROkoUul2IFYtPBIuVAt7TEsgCNfFfBicQ5rObxuLsk0J7m4U&usqp=CAU"
+                        alt="">
+                </span>
+            </div>
+            <button class="next">></button>
+            <script src="concept.js"></script>
+</body>
+
+</html>
