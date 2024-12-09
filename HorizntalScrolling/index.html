@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
+    <!-- <style>
         body {
             display: flex;
             justify-content: center;
@@ -38,9 +38,6 @@
             height: 280px;
             overflow: hidden;
             background-color: #20B2AA;
-
-
-
         }
 
         .first {
@@ -59,11 +56,43 @@ img:hover{
             transition: all 1.5s cubic-bezier(0.42, 0, 0.08, 0.72);
             /* transform:translatex(-83.5vh); */
         }
+    </style> -->
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+body{
+    display: flex;
+    justify-content: center; 
+    /* flex-direction: column; */
+}
+button{
+    height: 30px;
+    width: 30px;
+    align-self: center;
+    border-radius: 30px;
+}
+        .first {
+            display: flex;
+            gap: 50px;
+            border: 2px solid red;
+            padding: 20px;
+            width: 190px;
+            margin-left: 20px;
+            overflow: hidden;
+        }
+        img{
+            height: 280px;
+            width: 200px;
+            transition: all 1s ease-in-out;
+            /* transform: translateX(px); */
+        }
     </style>
 </head>
 
 <body>
-    <button class="back"><</button>
+    <!-- <button class="back"><</button>
             <div class="container">
                 <span class="first">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvCArKT9KS9usC7AvQsOJfPrMQOPRpHHvomXE5JIA6sejLYX1RIACmknYOzEbYh5ZQnzU&usqp=CAU"
@@ -84,8 +113,20 @@ img:hover{
                         alt="">
                 </span>
             </div>
-            <button class="next">></button>
-            <script src="concept.js"></script>
+            <button class="next">></button> -->
+<button onclick="back()">P</button>
+    <span class="first">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvCArKT9KS9usC7AvQsOJfPrMQOPRpHHvomXE5JIA6sejLYX1RIACmknYOzEbYh5ZQnzU&usqp=CAU"
+            alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEB51zsVPjXsPR851ralwBWLJoyJ6iMLZtn4P-_Lbk0Pkmr6t28lNyGPSsEuSFE7c8blo&usqp=CAU"
+            alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF3JOSCXaeWzqiuaWjWDudmqA0Q1WtbfJ25--bbPNRfL3gqFlkNOS89Xv0jlU8pQkuBoM&usqp=CAU"
+            alt="">
+     
+       
+    </span>
+    <button onclick="next()">N</button>
+    <script src="concept.js"></script>
 </body>
 
 </html>
