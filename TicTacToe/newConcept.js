@@ -1,193 +1,172 @@
 let inputBox = document.querySelectorAll("input")
-let arr = [[, ,], [, ,], [, ,]]
-let a = 1
-let firsti = 0, seci = 0, thirdi = 0;
-let firstj = 0, secj = 0, thirdj = 0;
-let firsti1 = 0, seci1 = 0, thirdi1 = 0;
-let firstj1 = 0, secj1 = 0, thirdj1 = 0;
+let winner = document.querySelector("h1")
+const arr = [[, ,], [, ,], [, ,]]
+let b = "✅"
+let c = "❌"
+let a = b
+let resetData = 0
 inputBox.forEach(input => {
     input.addEventListener('click', () => {
-        input.value = a
+
         switch (input.id) {
-            case '0': arr[0][0] = a
-                console.log(input.id);
-                if (a == 1) {
-                    a = 2
+            case '0': if (arr[0][0] == null) {
+                input.value = a
+                arr[0][0] = a
+                if (a == b) {
+                    a = c
                 }
                 else {
-                    a = 1
-                }
-                break;
-            case '1': arr[0][1] = a
-                console.log(input.id);
-                if (a == 1) {
-                    a = 2
-                }
-                else {
-                    a = 1
-                }
-                break;
-            case '2': arr[0][2] = a
-                console.log(input.id);
-                if (a == 1) {
-                    a = 2
-                }
-                else {
-                    a = 1
-                }
-                break;
-            case '3': arr[1][0] = a
-                console.log(input.id);
-                if (a == 1) {
-                    a = 2
-                }
-                else {
-                    a = 1
-                }
-                break;
-            case '4': arr[1][1] = a
-                console.log(input.id);
-                if (a == 1) {
-                    a = 2
-                }
-                else {
-                    a = 1
-                }
-                break;
-            case '5': arr[1][2] = a
-                console.log(input.id);
-                if (a == 1) {
-                    a = 2
-                }
-                else {
-                    a = 1
-                }
-                break;
-            case '6': arr[2][0] = a
-                console.log(input.id);
-                if (a == 1) {
-                    a = 2
-                }
-                else {
-                    a = 1
-                }
-                break;
-            case '7': arr[2][1] = a
-                console.log(input.id);
-                if (a == 1) {
-                    a = 2
-                }
-                else {
-                    a = 1
-                }
-                break;
-            case '8': arr[2][2] = a
-                console.log(input.id);
-                if (a == 1) {
-                    a = 2
-                }
-                else {
-                    a = 1
-                }
-                break;
-        }
-        for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 3; j++) {
-                if (arr[i][j] == 1) {
-                    switch (i) {
-                        case 0:
-                            if (i + j == 0) {
-                                firsti++
-                                console.log(i);
-                                console.log(j);
-                                console.log(arr[i][j]);
-                                if (firsti > 2) {
-                                    console.log("user 11 won");
-                                }
-                            }
-                            break;
-
-                        case 1: seci++;
-                            if (seci > 2) {
-                                console.log("user 12 won");
-                            }
-                            break;
-
-                        case 2: thirdi++
-                            if (thirdi > 2) {
-                                console.log("user 13 won");
-                            }
-                            break;
-
-                    }
-                    switch (j) {
-                        case 0: firstj++
-                            if (firstj > 2) {
-                                console.log("user 14 won");
-                            }
-                            break;
-
-                        case 1: secj++
-                            if (secj > 2) {
-                                console.log("user 15 won");
-                            }
-                            break;
-
-                        case 2: thirdj++
-                            if (thirdj > 2) {
-                                console.log("user 16 won");
-                            }
-                            break;
-
-                    }
-                }
-                else if (arr[i][j] == 2) {
-                    // a=!a
-                    switch (i) {
-                        case 0:
-                            firsti1++
-                            if (firsti1 > 2) {
-                                console.log("user 2 won");
-                            }
-                            break;
-
-                        case 1: seci1++
-                            if (seci1 > 2) {
-                                console.log("user 2 won");
-                            }
-                            break;
-
-                        case 2: thirdi1++
-                            if (thirdi1 > 2) {
-                                console.log("user 2 won");
-                            }
-                            break;
-
-                    }
-                    switch (j) {
-                        case 0: firstj1++
-                            if (firstj1 > 2) {
-                                console.log("user 2 won");
-                            }
-                            break;
-
-                        case 1: secj1++
-                            if (secj1 > 2) {
-                                console.log("user 2 won");
-                            }
-                            break;
-
-                        case 2: thirdj1++
-                            if (thirdj1 > 2) {
-                                console.log("user 2 won");
-                            }
-                            break;
-
-                    }
+                    a = b
                 }
             }
+                break;
+            case '1': if (arr[0][1] == null) {
+                input.value = a
+                arr[0][1] = a
+                console.log(input.id);
+                if (a == b) {
+                    a = c
+                }
+                else {
+                    a = b
+                }
+            }
+                break;
+            case '2': if (arr[0][2] == null) {
+                input.value = a
+                arr[0][2] = a
+                console.log(input.id);
+                if (a == b) {
+                    a = c
+                }
+                else {
+                    a = b
+                }
+            }
+                break;
+            case '3': if (arr[1][0] == null) {
+                input.value = a
+                arr[1][0] = a
+                console.log(input.id);
+                if (a == b) {
+                    a = c
+                }
+                else {
+                    a = b
+                }
+            }
+                break;
+            case '4': if (arr[1][1] == null) {
+                input.value = a
+                arr[1][1] = a
+                console.log(input.id);
+                if (a == b) {
+                    a = c
+                }
+                else {
+                    a = b
+                }
+            }
+                break;
+            case '5': if (arr[1][2] == null) {
+                input.value = a
+                arr[1][2] = a
+                console.log(input.id);
+                if (a == b) {
+                    a = c
+                }
+                else {
+                    a = b
+                }
+            }
+                break;
+            case '6': if (arr[2][0] == null) {
+                input.value = a
+                arr[2][0] = a
+                console.log(input.id);
+                if (a == b) {
+                    a = c
+                }
+                else {
+                    a = b
+                }
+            }
+                break;
+            case '7': if (arr[2][1] == null) {
+                input.value = a
+                arr[2][1] = a
+                console.log(input.id);
+                if (a == b) {
+                    a = c
+                }
+                else {
+                    a = b
+                }
+            }
+                break;
+            case '8': if (arr[2][2] == null) {
+                input.value = a
+                arr[2][2] = a
+                console.log(input.id);
+                console.log(input.value)
+
+                if (a == b) {
+                    a = c
+                }
+                else {
+                    a = b
+                }
+            }
+                break;
+        }
+        // for 1 condition is going on
+        if ((arr[0][0] == "✅" && arr[0][1] == "✅" && arr[0][2] == "✅") ||
+            (arr[1][0] == "✅" && arr[1][1] == "✅" && arr[1][2] == "✅") ||
+            (arr[2][0] == "✅" && arr[2][1] == "✅" && arr[2][2] == "✅") ||
+
+            (arr[0][0] == "✅" && arr[1][0] == "✅" && arr[2][0] == "✅") ||
+            (arr[0][1] == "✅" && arr[1][1] == "✅" && arr[2][1] == "✅") ||
+            (arr[0][2] == "✅" && arr[1][2] == 1 && arr[2][2] == "✅") ||
+
+            (arr[0][0] == "✅" && arr[1][1] == "✅" && arr[2][2] == "✅") ||
+            (arr[2][0] == "✅" && arr[1][1] == "✅" && arr[0][2] == "✅")
+        ) {
+            winner.innerHTML = `✅ is winner`
+            setTimeout(() => reset(), 3000);
         }
 
+        else if ((arr[0][0] == "❌" && arr[0][1] == "❌" && arr[0][2] == "❌") ||
+            (arr[1][0] == "❌" && arr[1][1] == "❌" && arr[1][2] == "❌") ||
+            (arr[2][0] == "❌" && arr[2][1] == "❌" && arr[2][2] == "❌") ||
 
-    })
+            (arr[0][0] == "❌" && arr[1][0] == "❌" && arr[2][0] == "❌") ||
+            (arr[0][1] == "❌" && arr[1][1] == "❌" && arr[2][1] == "❌") ||
+            (arr[0][2] == "❌" && arr[1][2] == "❌" && arr[2][2] == "❌") ||
+
+            (arr[0][0] == "❌" && arr[1][1] == "❌" && arr[2][2] == "❌") ||
+            (arr[2][0] == "❌" && arr[1][1] == "❌" && arr[0][2] == "❌")
+        ) {
+            winner.innerHTML = `❌ is winner`
+            setTimeout(() => reset(), 3000);
+
+        }
+    }
+
+    )
 })
+// })
+function reset() {
+    winner.innerHTML = null
+    a = b
+
+    // resetData=0
+    inputBox.forEach(input => {
+        input.value = null
+    })
+    for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+            arr[i][j] = null
+        }
+    }
+}
+document.querySelector("button").addEventListener('click', reset)

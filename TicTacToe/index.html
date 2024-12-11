@@ -6,9 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            background-color: rgb(47, 103, 107);
+        }
+
         input {
-            height: 20px;
-            width: 30px;
+            height: 100px;
+            width: 100px;
+            border: 1px solid rgb(27, 54, 27);
+            background: #9fb8c3;
+            text-align: center;
+            border-radius: 5px;
+            font-size: xx-large;
         }
 
         input:hover {
@@ -18,10 +31,23 @@
         span {
             display: flex;
         }
+        h1{
+        font-weight: 100;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        button{
+            height: 40px;
+            width: 150px;
+            border-radius: 5px;
+            background-color: rgb(164, 211, 93);
+            border: 2px solid rgb(225, 239, 25);
+            font-size: large;
+        }
     </style>
 </head>
 
 <body>
+    
     <div><span>
             <input id="0" type="text">
             <input id="1" type="text">
@@ -38,6 +64,8 @@
             <input id="8" type="text">
         </span>
     </div>
+    <h1></h1>
+    <button>Re-Start</button>
     <script src="newConcept.js"></script>
 </body>
 
