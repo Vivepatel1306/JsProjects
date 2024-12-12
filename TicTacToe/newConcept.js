@@ -1,4 +1,4 @@
-let inputBox = document.querySelectorAll("input")
+let inputBox = document.querySelectorAll("div")
 let winner = document.querySelector("h1")
 const arr = [[, ,], [, ,], [, ,]]
 let b = "✅"
@@ -10,7 +10,7 @@ inputBox.forEach(input => {
 
         switch (input.id) {
             case '0': if (arr[0][0] == null) {
-                input.value = a
+                input.innerHTML = a
                 arr[0][0] = a
                 if (a == b) {
                     a = c
@@ -21,7 +21,7 @@ inputBox.forEach(input => {
             }
                 break;
             case '1': if (arr[0][1] == null) {
-                input.value = a
+                input.innerHTML = a
                 arr[0][1] = a
                 console.log(input.id);
                 if (a == b) {
@@ -33,7 +33,7 @@ inputBox.forEach(input => {
             }
                 break;
             case '2': if (arr[0][2] == null) {
-                input.value = a
+                input.innerHTML = a
                 arr[0][2] = a
                 console.log(input.id);
                 if (a == b) {
@@ -45,7 +45,7 @@ inputBox.forEach(input => {
             }
                 break;
             case '3': if (arr[1][0] == null) {
-                input.value = a
+                input.innerHTML = a
                 arr[1][0] = a
                 console.log(input.id);
                 if (a == b) {
@@ -57,7 +57,7 @@ inputBox.forEach(input => {
             }
                 break;
             case '4': if (arr[1][1] == null) {
-                input.value = a
+                input.innerHTML = a
                 arr[1][1] = a
                 console.log(input.id);
                 if (a == b) {
@@ -69,7 +69,7 @@ inputBox.forEach(input => {
             }
                 break;
             case '5': if (arr[1][2] == null) {
-                input.value = a
+                input.innerHTML = a
                 arr[1][2] = a
                 console.log(input.id);
                 if (a == b) {
@@ -81,7 +81,7 @@ inputBox.forEach(input => {
             }
                 break;
             case '6': if (arr[2][0] == null) {
-                input.value = a
+                input.innerHTML = a
                 arr[2][0] = a
                 console.log(input.id);
                 if (a == b) {
@@ -93,7 +93,7 @@ inputBox.forEach(input => {
             }
                 break;
             case '7': if (arr[2][1] == null) {
-                input.value = a
+                input.innerHTML = a
                 arr[2][1] = a
                 console.log(input.id);
                 if (a == b) {
@@ -105,7 +105,7 @@ inputBox.forEach(input => {
             }
                 break;
             case '8': if (arr[2][2] == null) {
-                input.value = a
+                input.innerHTML = a
                 arr[2][2] = a
                 console.log(input.id);
                 console.log(input.value)
@@ -135,7 +135,9 @@ inputBox.forEach(input => {
             setTimeout(() => reset(), 3000);
         }
 
-        else if ((arr[0][0] == "❌" && arr[0][1] == "❌" && arr[0][2] == "❌") ||
+      
+
+        if ((arr[0][0] == "❌" && arr[0][1] == "❌" && arr[0][2] == "❌") ||
             (arr[1][0] == "❌" && arr[1][1] == "❌" && arr[1][2] == "❌") ||
             (arr[2][0] == "❌" && arr[2][1] == "❌" && arr[2][2] == "❌") ||
 
@@ -156,12 +158,12 @@ inputBox.forEach(input => {
 })
 // })
 function reset() {
-    winner.innerHTML = null
+    winner.innerText = null
     a = b
 
     // resetData=0
-    inputBox.forEach(input => {
-        input.value = null
+    inputBox.forEach(box => {
+        box.innerText = ''
     })
     for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
@@ -170,3 +172,15 @@ function reset() {
     }
 }
 document.querySelector("button").addEventListener('click', reset)
+
+function CheckWinner() {
+    for (let i = 0; i < 3; i++) {
+        if (arr[i][0] == "✅" && arr[i][1] == "✅" && arr[i][2] == "✅") { winner.innerHTML = `✅ is winner` }
+        if (arr[0][i] == "✅" && arr[1][i] == "✅" && arr[2][i] == "✅") { winner.innerHTML = `✅ is winner` }
+        else if ((arr[0][0] == "✅" && arr[1][1] == "✅" && arr[2][2] == "✅") ||
+            (arr[2][0] == "✅" && arr[1][1] == "✅" && arr[0][2] == "✅")) {
+            winner.innerHTML = `✅ is winner`
+        }
+    }
+
+}
