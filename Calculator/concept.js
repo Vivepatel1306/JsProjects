@@ -15,21 +15,59 @@
 
 
 let button = document.querySelectorAll("li")
-
-let output = 0;
-button.forEach(butt => {
-    butt.addEventListener('click', () => {
-        // console.log("hello")
-        if (butt.getAttribute("id") != null) {
-            let a = butt.getAttribute("id")
+let inputs = [];
+let operand = [];
+function GetInput(numbutton) {
+    numbutton.addEventListener('click', () => {
+        if (numbutton.getAttribute("id") != null) {
+            let a = numbutton.getAttribute("id")
             a = parseInt(a)
-            //   console.log(typeof(a))
-            console.log(output + a);
-        }
-        if (butt.getAttribute("id") == "*"){
-            output=output+
+            inputs.push(a)
+
         }
     })
+}
+function InstructionInput(inst) {
+    inst.addEventListener('click', () => {
+        if (inst.getAttribute("class") != null) {
+            let a = inst.getAttribute("class")
+            operand.push(a)
+            // for (let i = 0; i < operand.length; i++) {
+            //     console.log(operand[i])
+            // }
+        }
+    })
+}
+
+function equals(b, inputs, operand) {
+    b.addEventListener('click', () => {
+        if (b.getAttribute("name") == "equal") {
+            for (let i = 0; i < inputs.length; i++) {
+                console.log(operand.length);
+                switch (operand[i]) {
+                    case 'add': let a = inputs[0] + inputs[1]
+                        console.log(a);
+                        inputs.splice(0, 2);
+                        operand.splice(0, 1);
+                        inputs.push(a)
+                        for(let d=0;i<inputs.length;i++){
+console.log(`input data at ${i} is ${inputs[i]}`);
+console.log(`oprand data at ${i} is ${operand[i]}`);
+
+                        }
+
+                }
+            }
+        }
+    })
+
+
+}
+button.forEach(butt => {
+    GetInput(butt)
+    InstructionInput(butt)
+
+    equals(butt, inputs, operand)
 })
 
 

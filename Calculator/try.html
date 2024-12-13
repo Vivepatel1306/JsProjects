@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        #calculator {
+            width: 200px;
+            margin: 0 auto;
+        }
+        #display {
+            height: 50px;
+            background: #eee;
+            text-align: right;
+            padding: 10px;
+            font-size: 24px;
+        }
+        .button {
+            width: 50px;
+            height: 50px;
+            background: #ddd;
+            display: inline-block;
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <div id="display">0</div>
+        <div class="button" data-value="1">1</div>
+        <div class="button" data-value="2">2</div>
+        <div class="button" data-value="3">3</div>
+        <div class="button" data-value="+">+</div>
+        <div class="button" data-value="4">4</div>
+        <div class="button" data-value="5">5</div>
+        <div class="button" data-value="6">6</div>
+        <div class="button" data-value="-">-</div>
+        <div class="button" data-value="7">7</div>
+        <div class="button" data-value="8">8</div>
+        <div class="button" data-value="9">9</div>
+        <div class="button" data-value="*">*</div>
+        <div class="button" data-value="0">0</div>
+        <div class="button" data-value="C">C</div>
+        <div class="button" data-value="=">=</div>
+        <div class="button" data-value="/">/</div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.button');
+            const display = document.getElementById('display');
+            let currentInput = '';
+            let operator = '';
+            let firstOperand = null;
+            
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const value = this.getAttribute('data-value');
+                    
+                    if (!isNaN(value) || value === '.') {
+                        currentInput += value;
+                        display.textContent = currentInput;
+                    } else if (['+', '-', '*', '/'].includes(value)) {
+                        firstOperand = parseFloat(currentInput);
+                        operator = value;
+                        currentInput = '';
+                    } else if (value === '=') {
+                        if (firstOperand !== null && operator !== '') {
+                            const secondOperand = parseFloat(currentInput);
+                            let result;
+                            switch (operator) {
+                                case '+':
+                                    result = firstOperand + secondOperand;
+                                    break;
+                                case '-':
+                                    result = firstOperand - secondOperand;
+                                    break;
+                                case '*':
+                                    result = firstOperand * secondOperand;
+                                    break;
+                                case '/':
+                                    result = firstOperand / secondOperand;
+                                    break;
+                            }
+                            display.textContent = result;
+                            currentInput = result;
+                            operator = '';
+                            firstOperand = null;
+                        }
+                    } else if (value === 'C') {
+                        currentInput = '';
+                        operator = '';
+                        firstOperand = null;
+                        display.textContent = '0';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
