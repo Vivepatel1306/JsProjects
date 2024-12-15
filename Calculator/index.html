@@ -6,12 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+            background-color: rgb(137, 139, 76);
+            /* height: 30px; */
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        div {
+            border: 2px solid rgb(26, 13, 13);
+            width: 280px;
+            display: flex;
+            padding-right: 30px;
+          border-radius: 10px;
+            background-color: rgb(51, 51, 135);
+            flex-direction: column;
+            align-items: center;
+            /* justify-self: center; */
+            justify-content: flex-end;
+        }
+
         li {
             list-style: none;
-            border: 2px solid red;
+            background-color: rgb(142, 142, 200);
+            border: 2px solid rgb(15, 5, 5);
             height: 50px;
-            width: 50px;
-            border-radius: 5px;
+            font-size: larger;
+            font-weight: 200;
+            width: 50px;  
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+          border-radius: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -27,45 +53,69 @@
             gap: 5px;
 
         }
+
+        #AC,
+        .equal {
+            width: 110px;
+        }
+
+        p {
+            margin-left: 70px;
+            border-radius: 5px;
+            margin-right: 30px;
+            border: 3px solid rgb(32, 21, 21);
+            height: 50px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            width: 230px;
+            background-color: rgb(141, 141, 219);
+            font-size: x-large;
+            font-weight: 200;
+            align-content: center;
+            
+            /* padding-right: 10%; */
+
+        }
     </style>
 </head>
 
 <body>
-    <span>
-
+    <div>
+        <p class="output"></p>
         <ul>
             <li id="7">7</li>
             <li id="8">8</li>
             <li id="9">9</li>
-            <li class="m">*</li>
+            <li id="*">*</li>
         </ul>
+       
         <ul>
             <li id="4">4</li>
             <li id="5">5</li>
             <li id="6">6</li>
-            <li class="s">-</li>
+            <li id="-">-</li>
         </ul>
         <ul>
             <li id="1">1</li>
-            <li id="2" >2</li>
+            <li id="2">2</li>
             <li id="3">3</li>
-            <li class="a">+</li>
+            <li id="+">+</li>
         </ul>
         <ul>
-            <li id="rem">%</li>
+            <li id="%">%</li>
             <li id="0">0</li>
-            <li id="f"></li>
-            <li name="equal">=</li>
+            <li id=".">.</li>
+            <li id="/">/</li>
         </ul>
         <ul>
-            <li>AC</li>
-            <li>D</li>
-            <li></li>
-            <li class="d">/</li>
+            <li id="AC">AC</li>
+            <!-- <li id="D">D</li> -->
+            <li class="equal" id="=">=</li>
+
+
         </ul>
-    </span>
-    <p class="output"></p>
-    <script src="concept.js"></script>
+    </div>
+
+    <script src="ytConcept.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-3+3-1/4*5
+// 3+3-1/4*5
 let operand = ["a", "d", "a", "m"]
 let data = [7,5,5,8,2]
 let len = operand.length
