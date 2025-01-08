@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <input type="text">
+    <button type="button">add</button>
+    <span>
+
+    </span>
+    <script>
+        let addButton = document.querySelector("button");
+        let input = document.querySelector("input");
+        container = document.querySelector("span");
+
+        let deleteButton = document.createElement("button")
+        deleteButton.addEventListener('click', () => {
+            smallContainer.value=''
+
+        })
+        addButton.addEventListener('click', () => {
+            let para = document.createElement("div")
+            let smallContainer = document.createElement("div")
+
+            deleteButton.style.width = "50px"
+            deleteButton.textContent = "X"
+
+            para.innerHTML = input.value;
+            smallContainer.appendChild(para)
+            smallContainer.appendChild(deleteButton)
+
+            container.append(smallContainer);
+
+            input.value = '';
+        })
+    </script>
+</body>
+
+</html>
