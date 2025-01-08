@@ -14,7 +14,7 @@ input.addEventListener('input', () => {
     if (outputText.includes("@#")) {
         output.style.color = "red"
         input.style.border = "2px solid red"
-        output.textContent = `Password is Super strong`
+        output.textContent = `Password is Super strong`;
     }
 }
 )
