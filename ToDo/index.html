@@ -6,41 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        .container {
+            border: 2px solid red;
+            height: 30vh;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+        }
+        .container li span:hover{
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            color: rgb(0, 81, 153);
+            text-decoration: dotted;
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
     <input type="text">
-    <button type="button">add</button>
-    <span>
-
-    </span>
-    <script>
-        let addButton = document.querySelector("button");
-        let input = document.querySelector("input");
-        container = document.querySelector("span");
-
-        let deleteButton = document.createElement("button")
-        deleteButton.addEventListener('click', () => {
-            smallContainer.value=''
-
-        })
-        addButton.addEventListener('click', () => {
-            let para = document.createElement("div")
-            let smallContainer = document.createElement("div")
-
-            deleteButton.style.width = "50px"
-            deleteButton.textContent = "X"
-
-            para.innerHTML = input.value;
-            smallContainer.appendChild(para)
-            smallContainer.appendChild(deleteButton)
-
-            container.append(smallContainer);
-
-            input.value = '';
-        })
-    </script>
+    <button>add</button>
+    <div class="container">
+    </div>
+    <script src="concept.js"></script>
 </body>
 
 </html>
