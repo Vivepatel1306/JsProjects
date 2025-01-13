@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,24 +9,96 @@
         .container {
             border: 2px solid blue;
             height: 500px;
-            width: 500px;
-            display: flex;
-            flex-direction: column;
+            width: 400px;
+            padding: 10px;
+            margin-left: 100px;
+            margin-top: 7px;
+            border-radius: 10px;
         }
-        .container span:hover{
+
+        .container span:hover {
             cursor: pointer;
         }
 
+        .container li {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .title {
+            font-size: xx-large;
+            font-weight: 300;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        input {
+            width: 120px;
+            background-color: rgb(101, 211, 211);
+            border-radius: 5px;
+        }
+
+        button {
+            border-radius: 5px;
+            width: 30px;
+            background-color: rgb(34, 187, 187);
+        }
+
+        button:hover {
+            cursor: pointer;
+
+            background-color: rgb(34, 215, 215);
+        }
+
+        .upperbox {
+            display: flex;
+            flex-direction: column;
+            border: 2px solid rgb(124, 35, 208);
+            align-items: center;
+            width: 200px;
+            background-color: aqua;
+            margin-left: 200px;
+            border-radius: 10px;
+            gap: 7px;
+            padding: 10px;
+        }
+
+        .upperbox div {
+
+            background-color: aqua;
+        }
+
+        .upperbox span {
+
+            background-color: aqua;
+        }
+
+        .container li {
+            display: grid;
+            border-radius: 10px;
+            gap: 5px;
+            grid-template-columns: 10fr 1fr 1fr;
+            padding: 5px;
+            /* background-color: blanchedalmond; */
+        }
+
+        * {
+            background-color: rgb(203, 219, 233);
+        }
     </style>
 </head>
-<body>
-    <div>
-        <input class="input" type="text">
-        <button class="add">add</button>
-            </div>
-            <div class="container">
 
-            </div>
-            <script src="concept.js"></script>
+<body>
+    <div class="upperbox">
+        <div class="title">ToDo List</div>
+        <span> <input class="input" type="text">
+            <button class="add">+</button></span>
+
+    </div>
+    <div class="container">
+       
+    </div>
+    <script src="concept.js"></script>
 </body>
+
 </html>
