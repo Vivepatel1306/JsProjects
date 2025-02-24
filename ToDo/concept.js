@@ -5,11 +5,11 @@ function edit(index) {
     input.value = arr[index].text
     arr.splice(index, 1)
 
-    let gotdata = localStorage.getItem('userdata')
-    let outputdata = JSON.parse(gotdata)
-    outputdata.splice(0, 1)
-    localStorage.setItem('userdata', JSON.stringify(outputdata))
-    updateContainer()
+    // let gotdata = localStorage.getItem('userdata')
+    // let outputdata = JSON.parse(gotdata)
+    // outputdata.splice(0, 1)
+    // localStorage.setItem('userdata', JSON.stringify(outputdata))
+    // updateContainer()
 
 }
 
@@ -30,10 +30,10 @@ function updateContainer() {
         console.log(document.querySelector(".container"));
     })
 
-    let data = JSON.stringify(arr)
-    localStorage.setItem('userdata', data)
-    let storeddata = localStorage.getItem('userdata')
-    console.log(JSON.parse(storeddata))
+    // let data = JSON.stringify(arr)
+    // localStorage.setItem('userdata', data)
+    // let storeddata = localStorage.getItem('userdata')
+    // console.log(JSON.parse(storeddata))
 }
 let addButton = document.querySelector(".add").addEventListener('click', () => {
     if (input.value) {
