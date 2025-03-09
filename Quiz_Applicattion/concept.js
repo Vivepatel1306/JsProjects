@@ -1,8 +1,7 @@
-let heading = document.querySelector("h1")
+let question = document.querySelector("h1")
 let option = document.querySelectorAll(".option")
-let nextButton = document.querySelector('.next')
-
-
+// let nextButton = document.querySelector('.next')
+let box = document.querySelector("div")
 let arr = [
     {
         Question: "PM of India",
@@ -20,22 +19,34 @@ let arr = [
         Option0: { opt: "Shivraj  Singh", Answer: "Wrong" }
     }
 ]
+// console.log(arr[0])
+let i = 0;
+function hello() {
+    Object.keys(arr[i]).forEach((key) => {
+        if (key.startsWith("Option")) {
+            if (arr[i][key].Answer == "Correct") {
+                console.log("true")
+                
+            }
+            else 
+                console.log("false")
+            
+        }
+    })
+}
+function show() {
 
-let i=0;
-
-function next(){
-    if(i>2){
-        return
+    if (i < arr.length) {
+        question.innerText = arr[i].Question
+        option[0].innerText = arr[i].Option1.opt
+        option[1].innerText = arr[i].Option0.opt
+        i++;
     }
-heading.innerText=arr[i].Question
-option[0].innerText=arr[i].Option0.opt
-option[1].innerText=arr[i].Option1.opt
-i++
 }
-next()
-nextButton.addEventListener('click',()=>{next()})
+show()
+let next = document.createElement("button")
+next.innerText = "next"
+box.appendChild(next)
+next.addEventListener('click', show)
 
-function right(){
-    return arr[i].Option0.opt,arr[i].Option1.opt
-}
-
+option.forEach((e) => addEventListener('click', hello))
